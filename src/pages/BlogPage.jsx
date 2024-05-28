@@ -285,7 +285,7 @@ const BlogPage = () => {
                 <br></br>
             
                 Reddit - r/place 
-                <img src= "/Images/rplace.jpg"  alt="Reference 4" style={{ width: '30%' }} />
+                <img src= {`${process.env.PUBLIC_URL}//Images/rplace.jpeg`}  alt="Reference 4" style={{ width: '30%' }} />
              </p>
              <br></br>
              <p>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const slideStyles = {
   width: "100%",
@@ -56,8 +56,6 @@ const thumbnailStyle = {
 };
 
 const ImageSlider = ({ slides }) => {
-  console.log("Slides passed to ImageSlider:", slides); // Debugging
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
@@ -78,7 +76,7 @@ const ImageSlider = ({ slides }) => {
 
   const slideStylesWithBackground = {
     ...slideStyles,
-    backgroundImage: `url(${slides[currentIndex].url})`,
+    backgroundImage: `url(${process.env.PUBLIC_URL}${slides[currentIndex].url})`,
   };
 
   return (
@@ -94,7 +92,7 @@ const ImageSlider = ({ slides }) => {
         {slides.map((slide, slideIndex) => (
           <img
             key={slideIndex}
-            src={slide.url}
+            src={`${process.env.PUBLIC_URL}${slide.url}`}
             alt={slide.title}
             style={{
               ...thumbnailStyle,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Product from "./pages/Product";
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
@@ -11,7 +11,8 @@ import ImageSlider from "./pages/ImageSlider";
 
 const App = () => {
   return (
-    <Router>
+    <React.Fragment>
+      <HashRouter basename="/">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />
@@ -22,7 +23,8 @@ const App = () => {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/imageslider" element={<ImageSlider />} />
       </Routes>
-    </Router>
+    </HashRouter>
+    </React.Fragment>
   );
 };
 

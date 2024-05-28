@@ -8,7 +8,7 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("/Images/background1.jpeg") center; /* Ensure the file is in the public folder */
+    url(${`${process.env.PUBLIC_URL}//Images/background1.jpeg`}) center; /* Ensure the file is in the public folder */
   background-size: cover;
   display: flex;
   align-items: center;
